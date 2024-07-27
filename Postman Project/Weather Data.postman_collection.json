@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "bf17ad9e-b2e9-4559-89e2-ff6887cf38f8",
+		"name": "Weather Data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37170340"
+	},
+	"item": [
+		{
+			"name": "Current Weather Data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has city name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.name).to.eql(pm.environment.get(\"cityName\"));\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?q=Johannesburg&appid=94d505437b9fc561c1f5460cbf99c27f",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Johannesburg"
+						},
+						{
+							"key": "appid",
+							"value": "94d505437b9fc561c1f5460cbf99c27f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forecast Weather Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/forecast?q=Johannesburg&appid=94d505437b9fc561c1f5460cbf99c27f",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"forecast"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Johannesburg"
+						},
+						{
+							"key": "appid",
+							"value": "94d505437b9fc561c1f5460cbf99c27f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.openweathermap.org/data/2.5/forecast?q=Johannesburg&appid=94d505437b9fc561c1f5460cbf99c27f",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/forecast?q=Johannesburg&appid=94d505437b9fc561c1f5460cbf99c27f",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"forecast"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Johannesburg"
+						},
+						{
+							"key": "appid",
+							"value": "94d505437b9fc561c1f5460cbf99c27f"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
